@@ -35,7 +35,7 @@ Point::~Point()
 //Returns value of object's X data
 //Precondition: None
 //Postcondition: Returns a double value for the X coordinate
-const double Point::getX()
+double Point::getX() const
 {
 	return X;
 }
@@ -44,7 +44,7 @@ const double Point::getX()
 //Sets the X value in the object
 //Precondition: None
 //Postcondition: Sets the X value within the object
-const void Point::setX(double xValue)
+void Point::setX(double xValue)
 {
 	X = xValue;
 }
@@ -53,7 +53,7 @@ const void Point::setX(double xValue)
 //Returns value of object's Y data
 //Precondition: None
 //Postcondition: Returns a double value for the Y coordinate
-const double Point::getY()
+double Point::getY() const
 {
 	return Y;
 }
@@ -62,7 +62,7 @@ const double Point::getY()
 //Sets the Y value in the object
 //Precondition: None
 //Postcondition: Sets the Y value within the object
-const void Point::setY(double yValue)
+void Point::setY(double yValue)
 {
 	Y = yValue;
 }

@@ -42,7 +42,7 @@ ClosestPair::~ClosestPair() {}
 //Sets Point object values based on text file
 //Precondition: File must be formatted correctly for function to work
 //Postcondition: Sets each point object correctly to be used for the algorithm
-const void ClosestPair::setPoints(ifstream& file)
+void ClosestPair::setPoints(ifstream& file)
 {
 	double xInput, yInput;
 	file >> size;
@@ -61,7 +61,7 @@ const void ClosestPair::setPoints(ifstream& file)
 //Sorts the Point objects by x coordinate in increasing order
 //Precondition: setPoints needs to be called before this
 //Postcondition: points will be sorted by x values
-const void ClosestPair::mergeSortX(vector<Point>& vector, int l, int r)
+const void ClosestPair::mergeSortX(vector<Point>& vector, int l, int r) const
 {
 	if (l < r)
 	{
@@ -77,7 +77,7 @@ const void ClosestPair::mergeSortX(vector<Point>& vector, int l, int r)
 //Used in mergeSortX to merge two vectors together
 //Precondition: Should only be called in mergeSortX
 //Postcondition: Merges subvector for the iteration
-const void ClosestPair::mergeX(vector<Point>& smallVector, int l, int m, int r)
+void ClosestPair::mergeX(vector<Point>& smallVector, int l, int m, int r) const
 {
 	int l2 = m + 1;
 
@@ -110,7 +110,7 @@ const void ClosestPair::mergeX(vector<Point>& smallVector, int l, int m, int r)
 //Sorts the Point objects by y coordinate in increasing order
 //Precondition: setPoints needs to be called before this
 //Postcondition: points will be sorted by y values
-const void ClosestPair::mergeSortY(vector<Point>& vector, int l, int r)
+void ClosestPair::mergeSortY(vector<Point>& vector, int l, int r) const
 {
 	if (l < r)
 	{
@@ -126,7 +126,7 @@ const void ClosestPair::mergeSortY(vector<Point>& vector, int l, int r)
 //Used in mergeSortY to merge two vectors together
 //Precondition: Should only be ccalled in mergeSortY
 //Postcondition: merges subvector for the iteration
-const void ClosestPair::mergeY(vector<Point>& smallVector, int l, int m, int r)
+void ClosestPair::mergeY(vector<Point>& smallVector, int l, int m, int r) const
 {
 
 	int l2 = m + 1;
@@ -160,7 +160,7 @@ const void ClosestPair::mergeY(vector<Point>& smallVector, int l, int m, int r)
 //Sets up for the recursive Algorithm that performs the ClosestPair algorithm
 //Precondition: setPoints needs to be called before this to work
 //Postcondition: Creates two vectors sorted by x and y, and sets them to be used later
-const void ClosestPair::performAlgorithm()
+void ClosestPair::performAlgorithm()
 {
 	mergeSortX(points, 0, size - 1);
 	vector<Point> pointsXMerged = points;
@@ -175,7 +175,7 @@ const void ClosestPair::performAlgorithm()
 //Recursive function that performs the ClosestPair algorithm in O(n log(n) ) time
 //Precondition: Can only be called in performAlgorithm
 //Postcondition: Outputs the closest distance for each iteration of points until it reaches the overall problem
-const double ClosestPair::performAlgorithmRecur(vector<Point>& xVector, vector<Point>& yVector, int vectorSize, int left, int right)
+double ClosestPair::performAlgorithmRecur(vector<Point>& xVector, vector<Point>& yVector, int vectorSize, int left, int right) const
 {
 	int leftSize, rightSize, partition;
 	double resultX, resultY, result, delta, newResult, L, delta1, delta2;

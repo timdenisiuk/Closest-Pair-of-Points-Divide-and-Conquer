@@ -39,43 +39,43 @@ public:
 	//Sets Point object values based on text file
 	//Precondition: File must be formatted correctly for function to work
 	//Postcondition: Sets each point object correctly to be used for the algorithm
-	const void setPoints(ifstream& file);
+	void setPoints(ifstream& file);
 
 	//mergeSortX
 	//Sorts the Point objects by x coordinate in increasing order
 	//Precondition: setPoints needs to be called before this
 	//Postcondition: points will be sorted by x values
-	const void mergeSortX(vector<Point>&, int, int);
+	void mergeSortX(vector<Point>&, int, int) const;
 
 	//mergeX
 	//Used in mergeSortX to merge two vectors together
 	//Precondition: Should only be called in mergeSortX
 	//Postcondition: Merges subvector for the iteration
-	const void mergeX(vector<Point>&, int, int, int);
+	void mergeX(vector<Point>&, int, int, int) const;
 
 	//mergeSortY
 	//Sorts the Point objects by y coordinate in increasing order
 	//Precondition: setPoints needs to be called before this
 	//Postcondition: points will be sorted by y values
-	const void mergeSortY(vector<Point>&, int, int);
+	void mergeSortY(vector<Point>&, int, int) const;
 
 	//mergeY
 	//Used in mergeSortY to merge two vectors together
 	//Precondition: Should only be ccalled in mergeSortY
 	//Postcondition: merges subvector for the iteration
-	const void mergeY(vector<Point>&, int, int, int);
+	void mergeY(vector<Point>&, int, int, int) const;
 
 	//performAlgorithm
 	//Sets up for the recursive Algorithm that performs the ClosestPair algorithm
 	//Precondition: setPoints needs to be called before this to work
 	//Postcondition: Creates two vectors sorted by x and y, and sets them to be used later
-	const void performAlgorithm();
+	void performAlgorithm();
 
 	//performAlgorithmRecur
 	//Recursive function that performs the ClosestPair algorithm in O(n log(n) ) time
 	//Precondition: Can only be called in performAlgorithm
 	//Postcondition: Outputs the closest distance for each iteration of points until it reaches the overall problem
-	const double performAlgorithmRecur(vector<Point>&, vector<Point>&, int, int, int);
+	double performAlgorithmRecur(vector<Point>&, vector<Point>&, int, int, int) const;
 
 
 private:

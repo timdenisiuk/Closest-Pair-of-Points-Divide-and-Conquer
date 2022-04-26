@@ -31,25 +31,25 @@ public:
 	//Returns value of object's X data
 	//Precondition: None
 	//Postcondition: Returns a double value for the X coordinate
-	const double getX();
+	double getX() const;
 
 	//setX
 	//Sets the X value in the object
 	//Precondition: None
 	//Postcondition: Sets the X value within the object
-	const void setX(double);
+	void setX(double);
 
 	//getY
 	//Returns value of object's Y data
 	//Precondition: None
 	//Postcondition: Returns a double value for the Y coordinate
-	const double getY();
+	double getY() const;
 
 	//setY
 	//Sets the Y value in the object
 	//Precondition: None
 	//Postcondition: Sets the Y value within the object
-	const void setY(double);
+	void setY(double);
 
 private:
 	double X;	//double value for X coordinate
